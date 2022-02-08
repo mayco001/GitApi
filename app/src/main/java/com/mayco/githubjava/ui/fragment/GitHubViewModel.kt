@@ -25,13 +25,12 @@ class GitHubViewModel(private val repository: GitHubRepository) : ViewModel(), C
         repository.getApi()?.let {
             _gitList.postValue(it)
         }
-
     }
 
-    fun getGitHubPage(num: Int) {
+    fun getGitHubPage() {
         launch {
             try {
-                val response = repository.getGitHub(15, num)
+                val response = repository.getGitHub(29, 0)
                 if (response.isSuccessful) {
                     val listApi = response.body()!!
                     val listCache = repository.getApi()

@@ -13,11 +13,12 @@ import com.mayco.githubjava.databinding.GitHubFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GitHubFragment : Fragment() {
+
     private var recyclerViewAdapter = RecyclerViewAdapter()
     private val viewModel: GitHubViewModel by viewModel()
     private lateinit var binding: GitHubFragmentBinding
-    private var numPage: Int = 0
     private var recyclerView: RecyclerView? = null
+    private var numPage: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,8 +49,8 @@ class GitHubFragment : Fragment() {
                             1
                         ) && newState == RecyclerView.SCROLL_STATE_IDLE
                     ) {
-                        numPage += 15
-                        viewModel.getGitHubPage(numPage)
+
+                        viewModel.getGitHubPage()
                     }
                 }
             })
