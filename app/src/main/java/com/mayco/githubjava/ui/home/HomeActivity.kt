@@ -1,9 +1,11 @@
 package com.mayco.githubjava.ui.home
 
 import android.os.Bundle
-import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.mayco.githubjava.R
 import com.mayco.githubjava.databinding.ActivityHomeBinding
 import com.mayco.githubjava.ui.fragment.GitHubFragment
@@ -22,14 +24,9 @@ class HomeActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+
         initFragment()
         initView()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-
-        return super.onCreateOptionsMenu(menu)
     }
 
     private fun initFragment() {

@@ -3,6 +3,7 @@ package com.mayco.githubjava.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
@@ -48,10 +49,9 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerVie
         private val surname = itemView.findViewById<AppCompatTextView>(R.id.surname)
         private val nameRepository = itemView.findViewById<AppCompatTextView>(R.id.nameRepository)
 
-
         fun bind(gitHub: GitHubResponse) {
 
-            discretion.text = gitHub.login
+            discretion.text = gitHub.public_repos.toString()
             username.text = gitHub.login
             nameRepository.text = gitHub.html_url
 
