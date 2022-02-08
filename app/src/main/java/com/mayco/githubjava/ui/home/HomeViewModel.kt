@@ -27,7 +27,6 @@ class HomeViewModel(private val repository: GitHubRepository) : ViewModel(), Cor
 
                 val response = repository.getGitHub(15, (0..100).random())
                 if (response.isSuccessful) {
-
                     repository.saveApi(response.body()!!)
                 } else {
                     print(response)

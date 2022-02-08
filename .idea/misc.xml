@@ -13,9 +13,14 @@
         <entry key="..\:/Projetos Android/GithubJava/app/src/main/res/layout/item_github.xml" value="0.67" />
         <entry key="..\:/Projetos Android/GithubJava/app/src/main/res/layout/new_github.xml" value="0.5" />
         <entry key="..\:/Projetos Android/GithubJava/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/Users/PC JAMEF/Desktop/GitApi/app/src/main/res/layout/activity_home.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/PC JAMEF/Desktop/GitApi/app/src/main/res/layout/activity_login.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/PC JAMEF/Desktop/GitApi/app/src/main/res/layout/git_hub_fragment.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/PC JAMEF/Desktop/GitApi/app/src/main/res/layout/item_github.xml" value="0.31354166666666666" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

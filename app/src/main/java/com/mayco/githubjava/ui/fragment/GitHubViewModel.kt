@@ -22,7 +22,10 @@ class GitHubViewModel(private val repository: GitHubRepository) : ViewModel(), C
         get() = Dispatchers.Main + job
 
     fun initViewModel() {
-        _gitList.postValue(repository.getApi())
+        repository.getApi()?.let {
+            _gitList.postValue(it)
+        }
+
     }
 
     fun getGitHubPage(num: Int) {
@@ -30,12 +33,11 @@ class GitHubViewModel(private val repository: GitHubRepository) : ViewModel(), C
             try {
                 val response = repository.getGitHub(15, num)
                 if (response.isSuccessful) {
-
                     val listApi = response.body()!!
                     val listCache = repository.getApi()
                     val listActual = arrayListOf<GitHubResponse>()
 
-                    listActual.addAll(listCache)
+                    listCache?.let { listActual.addAll(it) }
                     listActual.addAll(listApi)
 
                     _gitList.postValue(listActual)

@@ -18,13 +18,14 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         initFragment()
-//        initView()
+        initView()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -51,17 +52,13 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initFragment() {
-
         val frameLayout = GitHubFragment()
         val transition = supportFragmentManager.beginTransaction()
-
         transition.replace(R.id.containerID, frameLayout)
-
         transition.commit()
     }
 
     private fun initView() {
-        binding.viewmodel = viewModel
         viewModel.getApi()
     }
 }

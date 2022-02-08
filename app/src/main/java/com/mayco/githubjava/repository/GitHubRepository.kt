@@ -12,7 +12,7 @@ class GitHubRepository(private val apiService: ApiService) {
         Hawk.put("save", save)
     }
 
-    fun getApi(): List<GitHubResponse> {
+    fun getApi(): List<GitHubResponse>? {
         return Hawk.get("save")
     }
 }

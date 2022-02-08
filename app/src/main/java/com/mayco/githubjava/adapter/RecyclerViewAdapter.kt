@@ -3,8 +3,8 @@ package com.mayco.githubjava.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -42,9 +42,9 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerVie
 
     class RecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val image = itemView.findViewById<ImageView>(R.id.avatar)
-        private val discretion = itemView.findViewById<TextView>(R.id.discretion)
-        private val username = itemView.findViewById<TextView>(R.id.username)
+        private val image = itemView.findViewById<AppCompatImageView>(R.id.avatarImg)
+        private val discretion = itemView.findViewById<AppCompatTextView>(R.id.discretion)
+        private val username = itemView.findViewById<AppCompatTextView>(R.id.username)
 
         fun bind(gitHub: GitHubResponse) {
 
@@ -59,7 +59,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerVie
                 .applyDefaultRequestOptions(requestOptions)
                 .load(gitHub.avatar_url)
                 .into(image)
-//            Glide.with(name.context).load(gitHub.bio).into(name)
+             /* Glide.with(name.context).load(gitHub.bio).into(name)*/
         }
     }
 }
