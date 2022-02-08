@@ -2,8 +2,6 @@ package com.mayco.githubjava.ui.home
 
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.mayco.githubjava.R
@@ -32,23 +30,6 @@ class HomeActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu, menu)
 
         return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        return when (item.itemId) {
-            R.id.primeiro -> {
-                Toast.makeText(this, "Primeiro", Toast.LENGTH_LONG).show()
-                true
-            }
-
-            R.id.segundo -> {
-                Toast.makeText(this, "Segundo", Toast.LENGTH_LONG).show()
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     private fun initFragment() {

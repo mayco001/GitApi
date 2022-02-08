@@ -45,11 +45,15 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerVie
         private val image = itemView.findViewById<AppCompatImageView>(R.id.avatarImg)
         private val discretion = itemView.findViewById<AppCompatTextView>(R.id.discretion)
         private val username = itemView.findViewById<AppCompatTextView>(R.id.username)
+        private val surname = itemView.findViewById<AppCompatTextView>(R.id.surname)
+        private val nameRepository = itemView.findViewById<AppCompatTextView>(R.id.nameRepository)
+
 
         fun bind(gitHub: GitHubResponse) {
 
-            discretion.text = gitHub.bio
-            username.text = gitHub.name
+            discretion.text = gitHub.login
+            username.text = gitHub.login
+            nameRepository.text = gitHub.html_url
 
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.git_branch)
@@ -59,7 +63,6 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerVie
                 .applyDefaultRequestOptions(requestOptions)
                 .load(gitHub.avatar_url)
                 .into(image)
-             /* Glide.with(name.context).load(gitHub.bio).into(name)*/
         }
     }
 }
