@@ -32,7 +32,7 @@ class HomeViewModel(private val repository: GitHubRepository) : ViewModel(), Cor
                     print(response)
                 }
             } catch (e: Exception) {
-                print("Error2")
+                print("Error")
             }
         }
     }
