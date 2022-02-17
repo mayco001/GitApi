@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("users")
+    @GET("/users")
     fun getReps(
         @Query("_limit") limit: Int,
         @Query("_start") start: Int

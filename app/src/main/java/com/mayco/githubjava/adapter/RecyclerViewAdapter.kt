@@ -18,10 +18,6 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerVie
         if (old != new) notifyDataSetChanged()
     }
 
-    fun setList(git: List<GitHubResponse>) {
-        this.items = git
-    }
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

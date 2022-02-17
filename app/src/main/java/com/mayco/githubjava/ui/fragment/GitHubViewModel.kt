@@ -30,7 +30,7 @@ class GitHubViewModel(private val repository: GitHubRepository) : ViewModel(), C
     fun getGitHubPage() {
         launch {
             try {
-                val response = repository.getGitHub(29, 0)
+                val response = repository.getGitHub(20, 0)
                 if (response.isSuccessful) {
                     val listApi = response.body()!!
                     val listCache = repository.getApi()
